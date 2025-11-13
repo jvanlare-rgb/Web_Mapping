@@ -12,6 +12,27 @@
 </head>
 
 <body>
+    <div id="map"></div>
+    <div class='map-overlay' id='features'>
+        <h2>US population density</h2>
+        <div id='text-description'>
+            <p>Hover over a state!</p>
+        </div>
+    </div>
+    <div class='map-overlay' id='legend'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoianZhbmxhcmUiLCJhIjoiY21oY2Zrd29nMTN2dDJtcHh5YzlxYWVtNSJ9.bP5BGQT-tdmmsC1SStqvNw';
+
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/light-v10', // style URL
+            zoom: 3, // starting zoom
+            center: [-100, 40] // starting center
+        });
+
+        async function geojsonFetch() {
+            let response = await fetch('assets/state_data.geojson');
+            let stateData = await response.json();
 
 </body>
 
