@@ -123,7 +123,6 @@
         }
       });
 
-      // Legend
       const layers = [
         '0–2', '2–4', '4–6', '6–8', '8+'
       ];
@@ -153,7 +152,6 @@
 
     map.on('load', geojsonFetch);
 
-    // Hover popup
     map.on('mousemove', ({ point }) => {
       const county = map.queryRenderedFeatures(point, {
         layers: ['covidData-layer']
