@@ -112,10 +112,10 @@
           'fill-color': [
             'step',
             ['get', 'deathPer10k'],
-            '#f2f0f7', 2,
-            '#cbc9e2', 6,
-            '#9e9ac8', 10,
-            '#756bb1', 15,
+            '#f2f0f7', 5,
+            '#cbc9e2', 10,
+            '#9e9ac8', 15,
+            '#756bb1', 20,
             '#54278f'
           ],
           'fill-outline-color': '#BBBBBB',
@@ -123,8 +123,19 @@
         }
       });
 
+      map.addLayer({
+        id: 'covidData-outline',
+        type: 'line',
+        source: 'covidData',
+        paint: {
+          'line-color': '#333333',
+          'line-width': 1
+        }
+      });
+
+
       const layers = [
-        '0–2', '2–6', '6-10', '10-15', '15+'
+        '0–5', '6–10', '11-15', '15-20', '20+'
       ];
       const colors = [
         '#f2f0f7',
