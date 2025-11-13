@@ -91,12 +91,12 @@
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
-      center: [-120.5, 47.4], // Washington State
+      center: [-120.5, 47.4],
       zoom: 6.2
     });
 
     async function geojsonFetch() {
-      let response = await fetch('assets/wa_covid_data-102521.geojson');
+      let response = await fetch('assets/wa-covid-data-102521.geojson');
       let covidData = await response.json();
 
       map.addSource('covidData', {
