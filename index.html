@@ -117,7 +117,6 @@
           legend.appendChild(item);
         });
 
-        // Popup on hover
         map.on('mousemove', 'death-rate', (e) => {
           const county = e.features[0].properties.name;
           const deaths = e.features[0].properties.deathPer10k;
