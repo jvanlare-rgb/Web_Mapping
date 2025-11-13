@@ -92,7 +92,7 @@
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
       center: [-120.5, 47.4],
-      zoom: 6.2
+      zoom: 6.4
     });
 
     async function geojsonFetch() {
@@ -132,6 +132,23 @@
           'line-width': 1
         }
       });
+
+      map.addLayer({
+        id: 'covidData-labels',
+        type: 'symbol',
+        source: 'covidData',
+          layout: {
+          'text-field': ['get', 'name'],     // County name
+          'text-font': ['Open Sans Bold'],   // Clean built-in font
+          'text-size': 12,
+          'text-offset': [0, 0]              // Centered on polygon
+      },
+        paint: {
+        'text-color': '#333333',
+        'text-halo-color': '#FFFFFF',
+        'text-halo-width': 1.2
+  }
+});
 
 
       const layers = [
